@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:layout="@layout/chat_window"/>
+
+    <ListPreference
+        app:title="Theme"
+        app:iconSpaceReserved="false"
+        app:useSimpleSummaryProvider="true"
+        app:key="theme"
+        app:dialogTitle="Choose a Theme"
+        app:defaultValue="0"
+        app:entryValues="@array/theme_values"
+        app:entries="@array/theme"
+        />
+    <SeekBarPreference
+        app:adjustable="true"
+        app:max="100"
+        app:min="0"
+        app:defaultValue="50"
+        app:seekBarIncrement="10"
+        app:title="sample"
+        android:iconSpaceReserved="false"
+        />
+
+
+</PreferenceScreen>
