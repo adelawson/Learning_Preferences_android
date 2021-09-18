@@ -14,7 +14,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.preference.PreferenceManager
 
 
-class MainActivity : AppCompatActivity(),SharedPreferences.OnSharedPreferenceChangeListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity(),SharedPreferences.OnSharedPreferenceCha
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         // Get NavHost and NavController
         val navHostFrag = supportFragmentManager.findFragmentById(R.id.nav_host_frag) as NavHostFragment
@@ -34,43 +33,10 @@ class MainActivity : AppCompatActivity(),SharedPreferences.OnSharedPreferenceCha
         // Link ActionBar with NavController
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        val dimmer:View? = findViewById<View>(R.id.imageView_dim)
-
-//        if (key == "theme"){
-//            val newTheme = sharedPreferences?.getString("theme","0")
-//            when(newTheme){
-//                "0"-> dimmer?.alpha=0.0f
-//                "1"-> dimmer?.alpha=0.5f
-//                "2"-> dimmer?.alpha=1.0f
-//            }
-//        }
-
-        if (key == "bar"){
-
-            val barIncr = sharedPreferences?.getInt("bar",50)?.toFloat()
-            val flt = barIncr?.div(100.0f)
-            if (flt != null) {
-                dimmer?.alpha=flt
-            }
-
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this)
-    }
-    override fun onPause() {
-        super.onPause()
-        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this)
-    }
 }
