@@ -1,17 +1,20 @@
 package com.adelawson.learnpreferences
 
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.preference.PreferenceManager
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),SharedPreferences.OnSharedPreferenceChangeListener {
 
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -39,31 +42,35 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        val dimmer:View? = findViewById<View>(R.id.imageView_dim)
 
-
-
-//    val dimmerView = findViewById<View>(R.id.imageView_dim)
-//
-//
-//
-//    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
 //        if (key == "theme"){
 //            val newTheme = sharedPreferences?.getString("theme","0")
 //            when(newTheme){
-//                "0" -> dimmerView.alpha = 0.2f
-//                "1"->dimmerView.alpha = 0.5f
-//                "2"->dimmerView.alpha= 1.0f
+//                "0"-> dimmer?.alpha=0.0f
+//                "1"-> dimmer?.alpha=0.5f
+//                "2"-> dimmer?.alpha=1.0f
 //            }
 //        }
-//    }
-//
-//    override fun onResume() {
-//        super.onResume()
-//        PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this)
-//    }
-//
-//    override fun onPause() {
-//        super.onPause()
-//        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this)
-//    }
+
+        if (key == "bar"){
+
+            val barIncr = sharedPreferences?.getInt("bar",50)?.toFloat()
+            val flt = barIncr?.div(100.0f)
+            if (flt != null) {
+                dimmer?.alpha=flt
+            }
+
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this)
+    }
+    override fun onPause() {
+        super.onPause()
+        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this)
+    }
 }

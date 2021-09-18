@@ -63,6 +63,7 @@
 
     <!-- Account Settings Page -->
     <string name="title_privacy">Privacy</string>
+    <string name="theme_key">theme</string>
     <string name="title_security">Security</string>
     <string name="title_log_out">Log out</string>
     <string name="title_delete_account">Delete my account</string>

@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Preference
-        android:layout="@layout/chat_window"/>
+        android:layout="@layout/chat_window"
+        app:selectable="false"/>
 
     <ListPreference
         app:title="Theme"
         app:iconSpaceReserved="false"
         app:useSimpleSummaryProvider="true"
-        app:key="theme"
+        app:key="@string/theme_key"
         app:dialogTitle="Choose a Theme"
         app:defaultValue="0"
         app:entryValues="@array/theme_values"
@@ -17,12 +18,13 @@
         />
     <SeekBarPreference
         app:adjustable="true"
-        app:max="100"
+        android:max="100"
         app:min="0"
+        app:key="bar"
         app:defaultValue="50"
         app:seekBarIncrement="10"
         app:title="sample"
-        android:iconSpaceReserved="false"
+        app:iconSpaceReserved="false"
         />
 
 
