@@ -16,6 +16,11 @@
         app:entryValues="@array/theme_values"
         app:entries="@array/theme"
         />
+    <Preference
+        app:title="change"
+        app:key="change_wallpaper"
+        android:iconSpaceReserved="false"
+        />
     <SeekBarPreference
         app:adjustable="true"
         android:max="100"

@@ -2,8 +2,10 @@ package com.adelawson.learnpreferences
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
+import androidx.preference.PreferenceManager
 
 
 class ChatListFragment : Fragment() {
@@ -12,6 +14,21 @@ class ChatListFragment : Fragment() {
 
         setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_chat_list, container, false)
+
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val dimmerBox:View? = view?.findViewById<View>(R.id.dimmer_box)
+        val prefMngr = PreferenceManager.getDefaultSharedPreferences(context)
+        val dimVal = prefMngr.getInt("bar",50).toFloat().div(100f)
+        dimmerBox?.alpha = dimVal
+        val btn:View? = view?.findViewById(R.id.btn_dim)
+        btn?.setOnClickListener(View.OnClickListener {
+            Toast.makeText(context, "this is a sample toast", Toast.LENGTH_SHORT).show()
+//            dimmerBox?.alpha= 0.2f
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

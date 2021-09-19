@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         // Link ActionBar with NavController
         setupActionBarWithNavController(navController, appBarConfiguration)
 
+
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
