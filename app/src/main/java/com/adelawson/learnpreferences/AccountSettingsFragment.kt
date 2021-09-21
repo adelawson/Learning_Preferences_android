@@ -26,7 +26,7 @@ class AccountSettingsFragment : Fragment() {
     fun setUpRecycler(view: View?){
 
         val context = requireContext()
-        val imageAdapter = ImageAdapter(context,SampleImages.list!!)
+        val imageAdapter = ImageAdapter(context,SampleImages.list_2!!)
         val recyclerView = view?.findViewById<RecyclerView>(R.id.gallery_recycler)
         recyclerView?.adapter= imageAdapter
         recyclerView?.setHasFixedSize(true)

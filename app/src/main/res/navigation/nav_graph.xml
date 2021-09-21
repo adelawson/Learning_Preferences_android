@@ -20,15 +20,28 @@
         android:name="com.adelawson.learnpreferences.SettingsFragment"
         android:label="Settings"
          >
+
         <action
-            android:id="@+id/action_settings_to_accSettings"
+            android:id="@+id/action_fragmentSettings_to_chooseWallpaperTypeFragment"
+            app:destination="@id/chooseWallpaperTypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseWallpaperTypeFragment"
+        android:name="com.adelawson.learnpreferences.ChooseWallpaperTypeFragment"
+        android:label="Choose Wallpaper Type"
+        tools:layout="@layout/fragment_choose_wallpaper_type">
+        <action
+            android:id="@+id/action_chooseWallpaperTypeFragment_to_fragmentAccSettings"
             app:destination="@id/fragmentAccSettings" />
     </fragment>
 
     <fragment
         android:id="@+id/fragmentAccSettings"
         android:name="com.adelawson.learnpreferences.AccountSettingsFragment"
-        android:label="Account"
-        tools:layout="@layout/fragment_account_settings" />
+        android:label="Choose Wallpaper"
+        tools:layout="@layout/fragment_account_settings" >
+    </fragment>
+
+
 
 </navigation>

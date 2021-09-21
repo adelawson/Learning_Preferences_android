@@ -2,6 +2,7 @@ package com.adelawson.learnpreferences
 
 import android.os.Bundle
 import android.view.*
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
@@ -9,6 +10,8 @@ import androidx.preference.PreferenceManager
 
 
 class ChatListFragment : Fragment() {
+
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 

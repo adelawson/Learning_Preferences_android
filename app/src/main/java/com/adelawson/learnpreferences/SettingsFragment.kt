@@ -22,7 +22,7 @@ class SettingsFragment : PreferenceFragmentCompat(),SharedPreferences.OnSharedPr
         changeWallpaper?.setOnPreferenceClickListener {
             val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_frag) as NavHostFragment
             val navController = navHostFragment.navController
-            val action = SettingsFragmentDirections.actionSettingsToAccSettings()
+            val action = SettingsFragmentDirections.actionFragmentSettingsToChooseWallpaperTypeFragment()
             navController.navigate(action)
             true
 
