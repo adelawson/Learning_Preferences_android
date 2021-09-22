@@ -13,12 +13,10 @@ import androidx.recyclerview.widget.RecyclerView
 class ImageAdapter (val context: Context, var imageList :ArrayList<GalleryImage> ): RecyclerView.Adapter<ImageAdapter.viewHolder>() {
 
     inner class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-
         private var currentPosition:Int = -1
         private var currentImage: GalleryImage? = null
 
         private val cardImageView = itemView.findViewById<ImageView>(R.id.gallery_image)
-        private val chngimg = itemView?.findViewById<ImageView>(R.id.imageView_test)
         fun setData(image:GalleryImage,position: Int){
             cardImageView.setImageResource(image.imageID)
 
@@ -34,9 +32,7 @@ class ImageAdapter (val context: Context, var imageList :ArrayList<GalleryImage>
 
         override fun onClick(v: View?) {
             val g= cardImageView.drawable
-            val intent = Intent.EXTRA_INTENT
             val verb = g.toString()
-            chngimg?.setImageDrawable(g)
 
             Toast.makeText(context, "this is a sample toast $verb", Toast.LENGTH_SHORT).show()
         }

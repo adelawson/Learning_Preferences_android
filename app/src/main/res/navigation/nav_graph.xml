@@ -32,7 +32,8 @@
         tools:layout="@layout/fragment_choose_wallpaper_type">
         <action
             android:id="@+id/action_chooseWallpaperTypeFragment_to_fragmentAccSettings"
-            app:destination="@id/fragmentAccSettings" />
+            app:destination="@id/fragmentAccSettings"
+            />
     </fragment>
 
     <fragment
@@ -40,6 +41,10 @@
         android:name="com.adelawson.learnpreferences.AccountSettingsFragment"
         android:label="Choose Wallpaper"
         tools:layout="@layout/fragment_account_settings" >
+        <argument
+            android:name="whichList"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 
 

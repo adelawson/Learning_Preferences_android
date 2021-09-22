@@ -26,16 +26,23 @@ class ChooseWallpaperTypeFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val selectWallpaper = view?.findViewById<ImageView>(R.id.select_bright)
+        val test = view.findViewById<ImageView>(R.id.test_imv)
+
+
         selectWallpaper.setOnClickListener {
-//            val message = "yam"
-//            val intent = Intent(context, AccountSettingsFragment::class.java)
-//            intent.putExtra("clicked_item", message)
-//            startActivity(intent)
-            val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_frag) as NavHostFragment
-            val navController = navHostFragment.navController
-            val action = ChooseWallpaperTypeFragmentDirections.actionChooseWallpaperTypeFragmentToFragmentAccSettings()
-            navController.navigate(action)
+            setArg(1)
         }
+        test.setOnClickListener {
+            setArg(2)
+        }
+
+    }
+
+    fun setArg( int: Int){
+        val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_frag) as NavHostFragment
+        val navController = navHostFragment.navController
+        val action = ChooseWallpaperTypeFragmentDirections.actionChooseWallpaperTypeFragmentToFragmentAccSettings(int)
+        navController.navigate(action)
 
     }
 

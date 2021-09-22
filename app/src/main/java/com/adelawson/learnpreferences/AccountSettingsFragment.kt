@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -23,23 +24,32 @@ class AccountSettingsFragment : Fragment() {
 
     }
 
-    fun setUpRecycler(view: View?){
+    fun setUpRecycler(view: View?, int: Int){
 
         val context = requireContext()
-        val imageAdapter = ImageAdapter(context,SampleImages.list_2!!)
+
+        var obj:ArrayList<GalleryImage>? = null
+        if (int == 1){
+            obj = SampleImages.list
+        }
+        else if (int == 2 ){obj=SampleImages.list_2}
+
+        val imageAdapter = ImageAdapter(context,obj!!)
         val recyclerView = view?.findViewById<RecyclerView>(R.id.gallery_recycler)
         recyclerView?.adapter= imageAdapter
-        recyclerView?.setHasFixedSize(true)
+        recyclerView?.setHasFixedSize(false)
 
-        val layoutManager = GridLayoutManager(context,2)
+        val layoutManager = GridLayoutManager(context,3)
         layoutManager.orientation = RecyclerView.VERTICAL
         recyclerView?.layoutManager = layoutManager
 
     }
+val args:AccountSettingsFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUpRecycler(view)
+        val number = args.whichList
+        setUpRecycler(view,number)
 
     }
 }

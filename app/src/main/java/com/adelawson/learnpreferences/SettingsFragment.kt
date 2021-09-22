@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.preference.*
@@ -28,7 +29,6 @@ class SettingsFragment : PreferenceFragmentCompat(),SharedPreferences.OnSharedPr
 
         }
 
-
         val theme = prefManager.getString("theme", "0" )
         Log.i("theme", "Theme_Value: $theme")
         val barPref = findPreference<SeekBarPreference>("bar")
@@ -38,9 +38,11 @@ class SettingsFragment : PreferenceFragmentCompat(),SharedPreferences.OnSharedPr
 
     }
 
+
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         val dimmer:View? = view?.findViewById<View>(R.id.imageView_dim)
         val dimmerBox:View? = view?.findViewById<View>(R.id.dimmer_box)
+
 
         if (key == "bar"){
 

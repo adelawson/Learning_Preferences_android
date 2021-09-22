@@ -23,6 +23,8 @@ class ChatListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val imgcontr = view?.findViewById<ImageView>(R.id.imageView_test)
+        val img = view?.findViewById<ImageView>(R.id.imageView6)
         val dimmerBox:View? = view?.findViewById<View>(R.id.dimmer_box)
         val prefMngr = PreferenceManager.getDefaultSharedPreferences(context)
         val dimVal = prefMngr.getInt("bar",50).toFloat().div(100f)
@@ -30,7 +32,8 @@ class ChatListFragment : Fragment() {
         val btn:View? = view?.findViewById(R.id.btn_dim)
         btn?.setOnClickListener(View.OnClickListener {
             Toast.makeText(context, "this is a sample toast", Toast.LENGTH_SHORT).show()
-//            dimmerBox?.alpha= 0.2f
+            
+        //            dimmerBox?.alpha= 0.2f
         })
     }
 
