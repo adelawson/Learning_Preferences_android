@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -39,7 +40,7 @@ class AccountSettingsFragment : Fragment() {
         recyclerView?.adapter= imageAdapter
         recyclerView?.setHasFixedSize(false)
 
-        val layoutManager = GridLayoutManager(context,3)
+        val layoutManager = GridLayoutManager(context,2)
         layoutManager.orientation = RecyclerView.VERTICAL
         recyclerView?.layoutManager = layoutManager
 

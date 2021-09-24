@@ -17,12 +17,14 @@ class SettingsFragment : PreferenceFragmentCompat(),SharedPreferences.OnSharedPr
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings, rootKey)
+
         val prefManager = PreferenceManager.getDefaultSharedPreferences(context)
+        val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_frag) as NavHostFragment
+        val navController = navHostFragment.navController
 
         val changeWallpaper = findPreference<Preference>("change_wallpaper")
         changeWallpaper?.setOnPreferenceClickListener {
-            val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_frag) as NavHostFragment
-            val navController = navHostFragment.navController
+
             val action = SettingsFragmentDirections.actionFragmentSettingsToChooseWallpaperTypeFragment()
             navController.navigate(action)
             true

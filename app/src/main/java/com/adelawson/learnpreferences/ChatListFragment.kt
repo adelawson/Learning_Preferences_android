@@ -24,7 +24,6 @@ class ChatListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val imgcontr = view?.findViewById<ImageView>(R.id.imageView_test)
-        val img = view?.findViewById<ImageView>(R.id.imageView6)
         val dimmerBox:View? = view?.findViewById<View>(R.id.dimmer_box)
         val prefMngr = PreferenceManager.getDefaultSharedPreferences(context)
         val dimVal = prefMngr.getInt("bar",50).toFloat().div(100f)
@@ -32,8 +31,7 @@ class ChatListFragment : Fragment() {
         val btn:View? = view?.findViewById(R.id.btn_dim)
         btn?.setOnClickListener(View.OnClickListener {
             Toast.makeText(context, "this is a sample toast", Toast.LENGTH_SHORT).show()
-            
-        //            dimmerBox?.alpha= 0.2f
+
         })
     }
 
@@ -48,7 +46,7 @@ class ChatListFragment : Fragment() {
             R.id.action_settings -> {
                 val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_frag) as NavHostFragment
                 val navController = navHostFragment.navController
-                val action = ChatListFragmentDirections.actionChatListToSettings()
+                val action = ChatListFragmentDirections.actionFragmentChatListToMainSettingsFragment()
                 navController.navigate(action)
                 return true
             }

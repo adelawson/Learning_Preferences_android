@@ -8,17 +8,20 @@
     <fragment
         android:id="@+id/fragmentChatList"
         android:name="com.adelawson.learnpreferences.ChatListFragment"
-        android:label="Chats"
+        android:label="Home"
         tools:layout="@layout/fragment_chat_list" >
         <action
             android:id="@+id/action_chatList_to_settings"
             app:destination="@id/fragmentSettings" />
+        <action
+            android:id="@+id/action_fragmentChatList_to_mainSettingsFragment"
+            app:destination="@id/mainSettingsFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/fragmentSettings"
         android:name="com.adelawson.learnpreferences.SettingsFragment"
-        android:label="Settings"
+        android:label="Chat Settings"
          >
 
         <action
@@ -46,7 +49,24 @@
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>
-
+    <fragment
+        android:id="@+id/mainSettingsFragment"
+        android:name="com.adelawson.learnpreferences.MainSettingsFragment"
+        android:label="Settings">
+        <action
+            android:id="@+id/action_mainSettingsFragment_to_fragmentSettings"
+            app:destination="@id/fragmentSettings" />
+        <action
+            android:id="@+id/action_mainSettingsFragment_to_profileInfoFragment"
+            app:destination="@id/profileInfoFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileInfoFragment"
+        android:name="com.adelawson.learnpreferences.ProfileInfoFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile_info" />
 
 
 </navigation>

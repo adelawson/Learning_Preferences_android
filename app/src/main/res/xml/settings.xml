@@ -6,21 +6,15 @@
         android:layout="@layout/chat_window"
         app:selectable="false"/>
 
-    <ListPreference
-        app:title="Theme"
-        app:iconSpaceReserved="false"
-        app:useSimpleSummaryProvider="true"
-        app:key="@string/theme_key"
-        app:dialogTitle="Choose a Theme"
-        app:defaultValue="0"
-        app:entryValues="@array/theme_values"
-        app:entries="@array/theme"
-        />
     <Preference
         app:key="change_wallpaper"
-        app:title="Change"
+        app:layout="@layout/change_wallpaper_button"
         app:iconSpaceReserved="false"
         />
+
+    <PreferenceCategory
+        app:title="Wallpaper Dimming"
+        app:iconSpaceReserved="false"/>
     <SeekBarPreference
         app:adjustable="true"
         android:max="100"
@@ -28,7 +22,6 @@
         app:key="bar"
         app:defaultValue="50"
         app:seekBarIncrement="10"
-        app:title="sample"
         app:iconSpaceReserved="false"
         />
 
