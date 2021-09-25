@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
-class AccountSettingsFragment : Fragment() {
+class SelectWallpaperFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,7 +45,7 @@ class AccountSettingsFragment : Fragment() {
         recyclerView?.layoutManager = layoutManager
 
     }
-val args:AccountSettingsFragmentArgs by navArgs()
+val args:SelectWallpaperFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

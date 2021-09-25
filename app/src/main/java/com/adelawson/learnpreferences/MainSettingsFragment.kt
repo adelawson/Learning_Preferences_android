@@ -18,7 +18,7 @@ class MainSettingsFragment : PreferenceFragmentCompat() {
         //navigation to chat settings on-click
         val chatSettings = findPreference<Preference>("chat_settings")
         chatSettings?.setOnPreferenceClickListener {
-            val action = MainSettingsFragmentDirections.actionMainSettingsFragmentToFragmentSettings()
+            val action = MainSettingsFragmentDirections.actionMainSettingsFragmentToChatSettingsFragment()
             navController.navigate(action)
             true
         }

@@ -3,20 +3,15 @@ package com.adelawson.learnpreferences
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.preference.*
 
 
-class SettingsFragment : PreferenceFragmentCompat(),SharedPreferences.OnSharedPreferenceChangeListener {
+class WallpaperSettingsFragment : PreferenceFragmentCompat(),SharedPreferences.OnSharedPreferenceChangeListener {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.settings, rootKey)
+        setPreferencesFromResource(R.xml.wallpaper_settings, rootKey)
 
         val prefManager = PreferenceManager.getDefaultSharedPreferences(context)
         val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_frag) as NavHostFragment
@@ -25,7 +20,7 @@ class SettingsFragment : PreferenceFragmentCompat(),SharedPreferences.OnSharedPr
         val changeWallpaper = findPreference<Preference>("change_wallpaper")
         changeWallpaper?.setOnPreferenceClickListener {
 
-            val action = SettingsFragmentDirections.actionFragmentSettingsToChooseWallpaperTypeFragment()
+            val action = WallpaperSettingsFragmentDirections.actionFragmentSettingsToChooseWallpaperTypeFragment()
             navController.navigate(action)
             true
 

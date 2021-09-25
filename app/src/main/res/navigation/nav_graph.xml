@@ -10,18 +10,16 @@
         android:name="com.adelawson.learnpreferences.ChatListFragment"
         android:label="Home"
         tools:layout="@layout/fragment_chat_list" >
-        <action
-            android:id="@+id/action_chatList_to_settings"
-            app:destination="@id/fragmentSettings" />
+
         <action
             android:id="@+id/action_fragmentChatList_to_mainSettingsFragment"
             app:destination="@id/mainSettingsFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/fragmentSettings"
-        android:name="com.adelawson.learnpreferences.SettingsFragment"
-        android:label="Chat Settings"
+        android:id="@+id/fragmentWallpaperSettings"
+        android:name="com.adelawson.learnpreferences.WallpaperSettingsFragment"
+        android:label="@string/Wallpaper"
          >
 
         <action
@@ -41,7 +39,7 @@
 
     <fragment
         android:id="@+id/fragmentAccSettings"
-        android:name="com.adelawson.learnpreferences.AccountSettingsFragment"
+        android:name="com.adelawson.learnpreferences.SelectWallpaperFragment"
         android:label="Choose Wallpaper"
         tools:layout="@layout/fragment_account_settings" >
         <argument
@@ -53,20 +51,29 @@
         android:id="@+id/mainSettingsFragment"
         android:name="com.adelawson.learnpreferences.MainSettingsFragment"
         android:label="Settings">
-        <action
-            android:id="@+id/action_mainSettingsFragment_to_fragmentSettings"
-            app:destination="@id/fragmentSettings" />
+
         <action
             android:id="@+id/action_mainSettingsFragment_to_profileInfoFragment"
             app:destination="@id/profileInfoFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_mainSettingsFragment_to_chatSettingsFragment"
+            app:destination="@id/chatSettingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileInfoFragment"
         android:name="com.adelawson.learnpreferences.ProfileInfoFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile_info" />
+    <fragment
+        android:id="@+id/chatSettingsFragment"
+        android:name="com.adelawson.learnpreferences.ChatSettingsFragment"
+        android:label="Chat Settings" >
+        <action
+            android:id="@+id/action_chatSettingsFragment_to_fragmentWallpaperSettings"
+            app:destination="@id/fragmentWallpaperSettings" />
+    </fragment>
 
 
 </navigation>

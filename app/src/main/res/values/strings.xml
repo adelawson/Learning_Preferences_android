@@ -16,4 +16,42 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <!-- Chat Settings -->
+    <string name="display_header">Display</string>
+    <string name="theme">Theme</string>
+    <string name="theme_dialog">Choose your Theme</string>
+    <string name="Wallpaper">Wallpaper</string>
+    <string name="enter_send">Enter is send</string>
+    <string name="system_default">System Default</string>
+    <string name="chat_settings_header">Chat Settings</string>
+    <string name="enter_to_send_main">Enter is send</string>
+    <string name="enter_to_send_subtitle">Enter key will send your message</string>
+    <string name="media_visibility_header">Media visibility</string>
+    <string name="media_visibility_subtitle">Show newly downloaded media in your phone’s gallery</string>
+    <string name="font_size_header">Font size</string>
+    <string name="font_dialog">Choose Font Size</string>
+    <string name="font_size_default">Medium</string>
+    <string name="chat_backup">Chat backup</string>
+    <string name="chat_history">Chat history</string>
+    <string name="string_manage_storage">Manage Storage</string>
+    <string name="profile_activity">Profile</string>
+    <string name="delete_txt">delete</string>
+    <string name="save_txt">save</string>
+    <string name="larger_items_or_no_items_string">No Item here</string>
+
+    <!-- Wallpaper Settings -->
+    <string name="wallpaper_dimming_header">Wallpaper Dimming</string>
+    <string name="change_wallpaper">Change</string>
+    <string name="bright_cat">Bright</string>
+    <string name="dark_cat">Dark</string>
+    <string name="solid_cat">Solid Colors</string>
+    <string name="my_photos_cat">My Photos</string>
+    <string name="default_wallpaper">Default Wallpaper</string>
+
+
+
+
 </resources>

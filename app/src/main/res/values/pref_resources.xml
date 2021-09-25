@@ -63,7 +63,6 @@
 
     <!-- Account Settings Page -->
     <string name="title_privacy">Privacy</string>
-    <string name="theme_key">theme</string>
     <string name="title_security">Security</string>
     <string name="title_log_out">Log out</string>
     <string name="title_delete_account">Delete my account</string>
@@ -83,26 +82,7 @@
         <item>Profile picture</item>    <!-- index 4 -->
     </string-array>
 
-    <string-array name="values_public_info">
-        <item>0</item>    <!-- index 0 -->
-        <item>1</item>    <!-- index 1 -->
-        <item>2</item>    <!-- index 2 -->
-        <item>3</item>    <!-- index 3 -->
-        <item>4</item>    <!-- index 4 -->
-    </string-array>
 
 
-    <string-array name="theme">
-        <item>System Default</item>
-        <item>Light</item>
-        <item>Dark</item>
-    </string-array>
-
-    <string-array name="theme_values">
-        <item>0</item>    <!-- index 0 -->
-        <item>1</item>    <!-- index 1 -->
-        <item>2</item>    <!-- index 2 -->
-
-    </string-array>
 
 </resources>
