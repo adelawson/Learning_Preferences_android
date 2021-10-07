@@ -12,6 +12,7 @@ class MainSettingsFragment : PreferenceFragmentCompat() {
 
         // Setup Nav Controller to handle navigation on Screen
 
+
         val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_frag) as NavHostFragment
         val navController = navHostFragment.navController
 

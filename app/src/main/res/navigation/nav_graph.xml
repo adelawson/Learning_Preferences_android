@@ -59,7 +59,8 @@
             app:exitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_mainSettingsFragment_to_chatSettingsFragment"
-            app:destination="@id/chatSettingsFragment" />
+            app:destination="@id/chatSettingsFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/profileInfoFragment"

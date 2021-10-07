@@ -1,5 +1,7 @@
 package com.adelawson.learnpreferences
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,7 +27,7 @@ class SelectWallpaperFragment : Fragment() {
 
     }
 
-    fun setUpRecycler(view: View?, int: Int){
+    fun setUpRecycler(view: View?, int: Int, preferences: SharedPreferences?){
 
         val context = requireContext()
 
@@ -35,7 +37,7 @@ class SelectWallpaperFragment : Fragment() {
         }
         else if (int == 2 ){obj=SampleImages.list_2}
 
-        val imageAdapter = ImageAdapter(context,obj!!)
+        val imageAdapter = ImageAdapter(context,obj!!, preferences)
         val recyclerView = view?.findViewById<RecyclerView>(R.id.gallery_recycler)
         recyclerView?.adapter= imageAdapter
         recyclerView?.setHasFixedSize(false)
@@ -49,8 +51,9 @@ val args:SelectWallpaperFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val sharedPreferences = activity?.getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
         val number = args.whichList
-        setUpRecycler(view,number)
+        setUpRecycler(view,number,sharedPreferences)
 
     }
 }

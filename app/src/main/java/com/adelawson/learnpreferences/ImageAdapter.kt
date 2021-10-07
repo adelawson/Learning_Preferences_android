@@ -2,6 +2,8 @@ package com.adelawson.learnpreferences
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +12,8 @@ import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 
-class ImageAdapter (val context: Context, var imageList :ArrayList<GalleryImage> ): RecyclerView.Adapter<ImageAdapter.viewHolder>() {
-
+class ImageAdapter (val context: Context, var imageList :ArrayList<GalleryImage>, preferences: SharedPreferences? ): RecyclerView.Adapter<ImageAdapter.viewHolder>() {
+    val preferences = preferences
     inner class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         private var currentPosition:Int = -1
         private var currentImage: GalleryImage? = null
@@ -31,7 +33,9 @@ class ImageAdapter (val context: Context, var imageList :ArrayList<GalleryImage>
 
 
         override fun onClick(v: View?) {
+            val editor = preferences?.edit()
             val g= cardImageView.drawable
+
             val verb = g.toString()
 
             Toast.makeText(context, "this is a sample toast $verb", Toast.LENGTH_SHORT).show()
